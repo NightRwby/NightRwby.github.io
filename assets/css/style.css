@@ -19,7 +19,7 @@
 
 
 /* progress */
-.progress {background: radial-gradient(#111, #000); position: absolute; width: 100%; height: 100vh; display: flex; align-items: center; justify-content:center; z-index: 9999;}
+.progress {background: radial-gradient(#111, #000); position: absolute; width: 100%; height: 100vh; display: flex; align-items: center; justify-content:center; z-index: 9991;}
 .progress-text {display: none; font: 14px; margin-top: 10px; position: absolute; text-align: center; top: 55%; width: 100%; color: #fff;}
 .progress-complete .progress-bar {border-top-color: rgb(0,0,0,1);}
 .loader {display: inline-flex; flex-wrap: wrap; width: 90px; height: 90px; transform-style: preserve-3d; transform: rotateX(45deg) rotate(45deg);}
@@ -34,27 +34,76 @@
 
 /* nav */
 #nav {position: relative;}
-#nav h1 {position: absolute; left: 40px; top: 40px; width: 150px; height: 100px; z-index: 1000;}
+#nav h1 {position: absolute; left: 40px; top: 40px; width: 150px; height: 100px; z-index: 9992;}
 #nav h1 svg {width: 100%;}
 #nav h1 .name {position: absolute; left: 50px; top: 11px; color: #fff; font-size: 18px;}
 #nav h1 .sname {position: absolute; left: 50px; top: 35px; color: #666; font-size: 14px; letter-spacing: 0.1em;}
 
-
 /* dot */
-#dot {position: absolute; left: 0; top:50%; z-index: 9002; transform: translatey(-50%);}
+#dot {position: fixed; left: 0; top:50%; z-index: 9993; transform: translatey(-50%);}
 #dot li {margin: 24px 8px;}
-#dot li a em {color: #fff; font-size: 20px; font-family: 'Open Sans', sans-serif; font-weight: 400;}
-#dot li a em.active {position: relative; color: #3EE7AC;}
-#dot li a em.active:after {content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 1px; background-color: #fff;}
-#dot li a span {position: absolute; opacity: 0; left: 0; color: #fff; width: 100px; font-size: 14px; margin-top: 5px; transition: all 0.3s ease-in-out;}
-#dot li a:hover span {opacity:1; left: 40px;}
+#dot li a {display: block; padding: 10px 15px; }
+
+/* 1. 기본값: 어두운 배경(S1, S3, S5) 위에서는 '흰색' */
+#dot li a em {
+    color: #fff; 
+    font-size: 20px; 
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 500;
+    transition: color 0.2s ease; /* 색상 변경 부드럽게 */
+}
+
+/* 2. [신규] 밝은 배경(S2, S4) 위에 있는 li는 '검은색' (JS에서 추가함) */
+#dot li.dark-text a em {
+    color: #000; 
+}
+
+/* 3. 활성화된 Dot(현재 보고 있는 섹션)은 무조건 '포인트 컬러' */
+/* !important를 써서 위의 흰색/검은색 설정을 모두 덮어씁니다 */
+#dot li.on a em {
+    color: #3EE7AC !important; 
+    position: relative;
+}
+
+/* 3. 배경 테마 전환 (inactive dot만 변경) */
+/* light-bg-theme가 적용될 때 (밝은 배경 S2, S4) */
+#dot.light-bg-theme li a em {
+    color: #000; /* 활성화되지 않은 Dot은 검은색으로 전환 */
+}
+
+/* 활성화된 Dot 시각적 표시 (em.active -> li.on에 맞춰 수정됨) */
+#dot li.on a em:after { /* 활성화된 li 내부의 em에 :after를 적용 */
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    top: 50%; 
+    width: 100%; 
+    height: 10px;
+}
+
+/* 마우스 호버 시 텍스트 스타일 */
+#dot li a span {
+    position: absolute; 
+    opacity: 0; 
+    left: 20px; 
+    color: #3EE7AC; 
+    width: 100px; 
+    font-weight: 600; 
+    font-size: 16px; 
+    margin-top: 5px; 
+    transition: all 0.3s ease-in-out;
+}
+#dot li a:hover span {opacity: 1; left: 50px; }
+
+/* #dot 가려짐문제 해결 (Canvas 환경에서 필요할 수 있는 설정) */
+iframe {pointer-events: none;}
 
 
 
 
 /* menu-wrapper */
 .menu-button {width: 4.6875rem; height: 4.6875rem;  position: fixed; top: 50%; right: 0; transform: translateY(-50%); background: none transparent; border: 0;}
-.menu-button.wrap {z-index: 9999;}
+.menu-button.wrap {z-index: 9992;}
 .menu-button-item {position: absolute; top: 0; left: 0; bottom: 0; right: 0;}
 .menu-button-item svg {display: block; width: 100%; height: 100%; fill:#fff; pointer-events: none; }
 .menu-button.wrap .menu-button-item.line {transition:  transform .4s cubic-bezier(.215,.61,.355,1);}
@@ -65,13 +114,13 @@
 .menu-button.wrap:hover .menu-button-item.base {transform: scale(0.9);}
 
 /* menu-wrapper 부분 스크롤 변화 따른  색 변화 */
-.menu-button.wrap.show .menu-button-item.line svg         {fill: #000;}
-.menu-button.wrap.show .menu-button-item.dots svg         {fill: #000;}
-.menu-button.wrap.show .menu-button-item.base svg         {fill: #000;}
-.menu-button.wrap.show .icon-wrap .icon                   {background: #fff;}
-.menu-button.wrap.show .icon-wrap .icon.animation         {background: #000;}
-.menu-button.wrap.show .icon-wrap .icon:before            {background: #fff;}
-.menu-button.wrap.show .icon-wrap .icon:after             {background: #fff;} 
+.show .menu-button-item.line svg         {fill: #000;}
+.show .menu-button-item.dots svg         {fill: #000;}
+.show .menu-button-item.base svg         {fill: #000;}
+.show .icon-wrap .icon                   {background: #fff;}
+.show .icon-wrap .icon.animation         {background: #000;}
+.show .icon-wrap .icon:before            {background: #fff;}
+.show .icon-wrap .icon:after             {background: #fff;} 
 .menu-button.wrap.show3 .menu-button-item.line svg        {fill: #000;}
 .menu-button.wrap.show3 .menu-button-item.dots svg        {fill: #000;}
 .menu-button.wrap.show3 .menu-button-item.base svg        {fill: #000;}
@@ -81,7 +130,7 @@
 .menu-button.wrap.show3 .icon-wrap .icon:after            {background: #fff;} 
 
 /* icon 햄버거 메뉴 */
-.icon-wrap {z-index: 9999; position: absolute; right: 8px; top: 16px; cursor: pointer; padding: 20px;}
+.icon-wrap {z-index: 9992; position: absolute; right: 8px; top: 16px; cursor: pointer; padding: 20px;}
 .icon, .icon:before, .icon:after {width: 20px; height: 3px; background: #000;}
 .icon {position: relative;  transition: background 0 300ms;}
 .icon.animation {background: rgba(0,0,0,0);}
@@ -92,7 +141,7 @@
 
 /* box-wrap */
 .box-wrap   {position: fixed; top: 0; bottom: 0; right: 0; left: 0; z-index: 9000; transition: all 1s cubic-bezier(.645,.045,.355,1);}
-.box-wrap.show {z-index: 9998;}
+.box-wrap.show {z-index: 9990;}
 .box-wrap .box1 {width: 11.1111111111%; height: 50vh;overflow: hidden;position: relative;float: left;}
 .box-wrap .box2 {width: 38.8888888889%; height: 50vh;overflow: hidden;position: relative; float: left;}
 .box-wrap .overlay.right {position: absolute; right: 0; top: 0; z-index: 1; width: 0vw; height: 100vh; background-position: center center; background-size: cover; background-color: #fff; transition: width 1s cubic-bezier(.645,.045,.355,1);}
@@ -101,7 +150,7 @@
 
 
 /* line */
-#line {position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 9999; pointer-events: none; opacity: 0; transition: opacity .3s cubic-bezier(.215,.61,.355,1);}
+#line {position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 9991; pointer-events: none; opacity: 0; transition: opacity .3s cubic-bezier(.215,.61,.355,1);}
 .line {position: relative; height: 100%; display: inline-block; vertical-align: top; font-size: 1rem; padding-left: 0;}
 .line.sline {width: 11.1111111111%;}
 .line.sline:after {content: ''; position: absolute;top: 0;right: 0;bottom: 0;border-right: 1px solid #797979;transition: transform .6s cubic-bezier(.215,.61,.355,1);transform-origin: center top;transform: scaleY(1);opacity: 0.14;}
@@ -112,7 +161,7 @@
 
 /* menu */
 .menu {position: fixed; top: 0; bottom: 0; right: 0; left: 0; overflow: hidden; z-index: -1; overflow: hidden; transition: z-index 1s ease;}
-.menu.show {z-index: 9999;}
+.menu.show {z-index: 9991;}
 .menu .menu-left {width: 50%; position: absolute; left: 0; top: 41vh; overflow: hidden; }
 .menu .menu-left a {display: inline-block; color: #030303; font-size: 24px; padding-top: 10px;}
 .menu .menu-left a span {position: relative;}
@@ -170,7 +219,7 @@
 
 
 body.active #nav h1                      {opacity: 1;}
-body.active #dot                         {opacity: 1; left: 40px;}
+body.active #dot                         {opacity: 1; left: 20px;}
 body.active .menu-button                 {opacity: 1; right: 40px;}
 body.active .sec1 .text .sec1_desc       {opacity: 1; transform: translateY(0%);}
 body.active .sec1 .text h2               {opacity: 1; transform: translateY(0);}
@@ -398,7 +447,7 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
 
 
 /* modal */
-#modal {position: fixed; left:0; top:0; width: 100%; height: 100%; transform: scale(0); z-index: 9999; }
+#modal {position: fixed; left:0; top:0; width: 100%; height: 100%; transform: scale(0); z-index: 9991; }
 #modal .modal-bg {background: rgba(0,0,0,0.9); display:flex; align-items: center; justify-content: center; height: 100%; }
 #modal .modal-bg .modal-cont {position:relative; max-width: 1100px;}
 #modal .modal-bg .modal-cont h2 {font-size: 30px; margin:0; padding-bottom: 50px; color: #fff; font-family: 'Fugaz One', cursive; text-align: center;}
@@ -474,7 +523,6 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
   background: transparent;
   box-shadow: 222px 946px #FFF, 408px 926px #FFF, 1608px 1741px #FFF, 1977px 1436px #FFF, 713px 1152px #FFF, 139px 39px #FFF, 497px 1590px #FFF, 1808px 1652px #FFF, 598px 667px #FFF, 1962px 75px #FFF, 331px 1245px #FFF, 1600px 1822px #FFF, 1463px 883px #FFF, 299px 335px #FFF, 1229px 909px #FFF, 448px 581px #FFF, 1346px 571px #FFF, 1247px 458px #FFF, 799px 186px #FFF, 643px 404px #FFF, 1330px 790px #FFF, 299px 699px #FFF, 1593px 1891px #FFF, 934px 1230px #FFF, 1162px 1835px #FFF, 903px 1024px #FFF, 596px 900px #FFF, 1223px 1078px #FFF, 682px 1024px #FFF, 151px 373px #FFF, 54px 1586px #FFF, 657px 1902px #FFF, 812px 273px #FFF, 705px 1142px #FFF, 1902px 1353px #FFF, 1222px 1980px #FFF, 767px 158px #FFF, 22px 663px #FFF, 1055px 727px #FFF, 1728px 750px #FFF, 223px 287px #FFF, 438px 127px #FFF, 224px 1146px #FFF, 1594px 1466px #FFF, 1505px 436px #FFF, 389px 1049px #FFF, 596px 435px #FFF, 1997px 1798px #FFF, 29px 51px #FFF, 40px 514px #FFF, 1779px 769px #FFF, 652px 1211px #FFF, 1599px 347px #FFF, 1854px 1941px #FFF, 485px 1633px #FFF, 697px 1894px #FFF, 1772px 877px #FFF, 555px 1030px #FFF, 976px 1338px #FFF, 541px 1112px #FFF, 817px 899px #FFF, 961px 923px #FFF, 115px 1321px #FFF, 875px 434px #FFF, 1577px 1980px #FFF, 1160px 131px #FFF, 15px 160px #FFF, 979px 56px #FFF, 959px 1756px #FFF, 1358px 435px #FFF, 563px 591px #FFF, 1284px 475px #FFF, 341px 601px #FFF, 74px 471px #FFF, 416px 584px #FFF, 692px 536px #FFF, 1041px 377px #FFF, 1601px 1923px #FFF, 1014px 241px #FFF, 122px 1594px #FFF, 1510px 280px #FFF, 195px 1720px #FFF, 152px 104px #FFF, 1686px 811px #FFF, 1329px 750px #FFF, 1655px 441px #FFF, 1288px 1040px #FFF, 1802px 1368px #FFF, 767px 615px #FFF, 302px 195px #FFF, 1973px 1902px #FFF, 1088px 1583px #FFF, 1840px 1126px #FFF, 500px 111px #FFF, 1263px 667px #FFF, 1748px 121px #FFF, 1608px 364px #FFF, 1064px 1610px #FFF, 1682px 1826px #FFF, 1747px 1800px #FFF;
 }
-
 
 /* keyframes */
 @keyframes move {
@@ -754,4 +802,3 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
 
 @media (max-width: 320px){
 }
-

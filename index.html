@@ -8,11 +8,9 @@
     <meta name="keywords" content="웹퍼블리셔, 웹접근성, 반응형사이트, HTML5, WEB">
     <title>PORTFOLIO</title>
     
-    <!-- style -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     
-    <!-- web font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400&display=swap" rel="stylesheet">
@@ -20,20 +18,10 @@
     <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
     
     
-    <!-- Icon -->
     <link rel="shortcut icon" href="assets/img/favicon.png">
     
     
-    <!-- HTLM5shiv ie6~8 -->
-    <!--[if lt IE 9]> 
-        <script src="assets/js/html5shiv.min.js"></script>
-        <script type="text/javascript">
-            alert("현재 브라우저는 지원하지 않습니다. 크롬 브라우저를 추천합니다.!");
-        </script>
-   <![endif]-->
-   
-   
-</head>
+    </head>
 <body>
   
 
@@ -46,20 +34,16 @@
         </div> 
 	</div>
 
-    <!-- //progress -->
-   
-    <div id="dot">
+    <div id="dot" style="position: fixed; top: 50%; transform: translateY(-50%);">
         <ul>
-            <li class="active"><a href="#"><em class="active">01</em><span>HOME</span></a></li>
-            <li><a href="#"><em>02</em><span>ABOUT ME</span></a></li>
-            <li><a href="#"><em>03</em><span>PORTFOLIO</span></a></li>
-            <li><a href="#"><em>04</em><span>ANIMATION</span></a></li>
-            <li><a href="#"><em>05</em><span>CONTACT</span></a></li>
+            <li class="active"><a href="#section1"><em class="active">01</em><span id="L1">HOME</span></a></li>
+            <li><a href="#section2"><em>02</em><span id="L2">ABOUT ME</span></a></li>
+            <li><a href="#section3"><em>03</em><span id="L3">PORTFOLIO</span></a></li>
+            <li><a href="#section4"><em>04</em><span id="L4">ANIMATION</span></a></li>
+            <li><a href="#section5"><em>05</em><span id="L5">CONTACT</span></a></li>
         </ul>
     </div>
-    <!-- //dot -->
-    
-    	<div class="menu-wrapper">
+    <div class="menu-wrapper">
 		<button class="menu-button wrap">
 			<span class="menu-button-item line">
 				<svg viewBox="0 0 80 80" width="100%" height="100%">
@@ -86,10 +70,7 @@
 			</div> 
 		</button>
 	</div>
-	<!-- //menu-wrapper -->
-   
-   
-   <div class="menu-inner">
+	<div class="menu-inner">
 		<div class="box-wrap">
             <div class="box1 right">
                 <div class="overlay right"></div>
@@ -140,9 +121,7 @@
 		</div>
         </div>
 	</div>
-	<!-- //menu-inner -->
-    
-    <nav id="nav">
+	<nav id="nav">
         <h1>
             <svg fill="#3EE7AC" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 175 70" enable-background="new 0 0 175 70" xml:space="preserve">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M30.514,33.466c-1.08-0.675-4.24-4.359-4.131-9.71
@@ -170,9 +149,6 @@
             <span class="sname">PORTFOLIO</span>
         </h1>
     </nav>
-    <!-- //nav -->
-    
-
     <section id="contents">
         <section id="section1">
             <div id="bg">
@@ -188,8 +164,6 @@
                 </div>
             </div>
         </section>
-        <!-- //section1 -->
-        
         <section id="section2">
             <div class="s2_bg"></div>
             <div class="container">
@@ -218,8 +192,6 @@
                 </div>
             </div>
         </section>
-        <!-- //section2 -->
-        
         <section id="section3">
             <div class="s3_bg"></div>
             <div class="container">
@@ -234,84 +206,84 @@
                             <div class="revealer"></div>
                             <div class="s3_text">
                                 <p class="s3_tit">PROJECT 01</p>
-                                <h4 class="h4_tit">STANDARD</h4>
-                                <p class="s3_desc">Web Standard Site Coding</p>
-                                <span class="mSite">kangsane.dothome.co.kr</span>
-                                <a href="http://kangsane.dothome.co.kr/web/" target="_blank" class="skew"><span>VIEW SITE</span></a>
+                                <h4 class="h4_tit">MESSENGER</h4>
+                                <p class="s3_desc">Web Chat Site Coding</p>
+                                <span class="mSite">www.bzez.shop</span>
+                                
+                                <a href="http://www.bzez.shop" target="_blank" class="window skew"><span>VIEW SITE</span></a>
+                                
                             </div>
                         </div>
                         <div class="cont_right">
-                            <div class="s3_img"><img src="assets/img/cont2.png" alt="반응형사이트"></div>
+                            <div class="s3_img" style="text-align: center; line-height: 200px; font-size: 1.5em; background-color: #333; color: #fff;">구현 예정</div>
                             <div class="revealer"></div>
                             <div class="s3_text">
                                 <p class="s3_tit">PROJECT 02</p>
-                                <h4 class="h4_tit">RESPONSIVE</h4>
+                                <h4 class="h4_tit">구현 예정</h4>
                                 <p class="s3_desc">Web Responsive Site Coding</p>
-                                <span class="mSite">kangsane.dothome.co.kr</span>
-                                <a href="http://kangsane.dothome.co.kr/responsive/html5/index.html" target="_blank" class="skew"><span>VIEW SITE</span></a>
+                                <span class="mSite">www.****.***</span>
+                                <a href="#" class="skew"><span>VIEW SITE</span></a>
                             </div>
                         </div>
                         <div class="cont_left">
-                            <div class="s3_img"><img src="assets/img/cont3.png" alt="메가박스사이트"></div>
+                            <div class="s3_img" style="text-align: center; line-height: 200px; font-size: 1.5em; background-color: #333; color: #fff;">구현 예정</div>
                             <div class="revealer"></div>
                             <div class="s3_text">
                                 <p class="s3_tit">PROJECT 03</p>
-                                <h4 class="h4_tit">MEGABOX</h4>
+                                <h4 class="h4_tit">구현 예정</h4>
                                 <p class="s3_desc">Web Responsive Site Coding</p>
-                                <span class="mSite">kangsane.dothome.co.kr</span>
-                                <a href="http://kangsane.dothome.co.kr/mega/index21.html" target="_blank" class="skew"><span>VIEW SITE</span></a>
+                                <span class="mSite">www.****.***</span>
+                                <a href="#" class="skew"><span>VIEW SITE</span></a>
                             </div>
                         </div>
                         <div class="cont_right">
-                            <div class="s3_img"><img src="assets/img/cont4.png" alt="키즈가오사이트"></div>
+                            <div class="s3_img" style="text-align: center; line-height: 200px; font-size: 1.5em; background-color: #333; color: #fff;">구현 예정</div>
                             <div class="revealer"></div>
                             <div class="s3_text">
                                 <p class="s3_tit">PROJECT 04</p>
-                                <h4 class="h4_tit">KIDSGAO</h4>
+                                <h4 class="h4_tit">구현 예정</h4>
                                 <p class="s3_desc">Web Responsive Site Coding</p>
-                                <span class="mSite">kangsane.dothome.co.kr</span>
-                                <a href="http://kangsane.dothome.co.kr/kidsgao/kidsgao.html" target="_blank" class="skew"><span>VIEW SITE</span></a>
+                                <span class="mSite">www.****.***</span>
+                                <a href="#" class="skew"><span>VIEW SITE</span></a>
                             </div>
                         </div>
                         <div class="cont_left">
-                            <div class="s3_img"><img src="assets/img/cont5.png" alt="가비아사이트"></div>
+                            <div class="s3_img" style="text-align: center; line-height: 200px; font-size: 1.5em; background-color: #333; color: #fff;">구현 예정</div>
                             <div class="revealer"></div>
                             <div class="s3_text">
                                 <p class="s3_tit">PROJECT 05</p>
-                                <h4 class="h4_tit">GABIA</h4>
+                                <h4 class="h4_tit">구현 예정</h4>
                                 <p class="s3_desc">Web Responsive Site Coding</p>
-                                <span class="mSite">kangsane.dothome.co.kr</span>
-                                <a href="http://kangsane.dothome.co.kr/gabia/" target="_blank" class="skew"><span>VIEW SITE</span></a>
+                                <span class="mSite">www.****.***</span>
+                                <a href="#" class="skew"><span>VIEW SITE</span></a>
                             </div>
                         </div>
                         <div class="cont_right">
-                            <div class="s3_img"><img src="assets/img/cont6.png" alt="락앤락사이트"></div>
+                            <div class="s3_img" style="text-align: center; line-height: 200px; font-size: 1.5em; background-color: #333; color: #fff;">구현 예정</div>
                             <div class="revealer"></div>
                             <div class="s3_text">
                                 <p class="s3_tit">PROJECT 06</p>
-                                <h4 class="h4_tit">LOCK&amp;LOCK</h4>
+                                <h4 class="h4_tit">구현 예정</h4>
                                 <p class="s3_desc">Web Standard Site Coding</p>
-                                <span class="mSite">kangsane.dothome.co.kr</span>
-                                <a href="http://kangsane.dothome.co.kr/locknlock/" target="_blank" class="skew"><span>VIEW SITE</span></a>
+                                <span class="mSite">www.****.***</span>
+                                <a href="#" class="skew"><span>VIEW SITE</span></a>
                             </div>
                         </div>
                         <div class="cont_left">
-                            <div class="s3_img"><img src="assets/img/cont7.png" alt="모바일사이트"></div>
+                            <div class="s3_img" style="text-align: center; line-height: 200px; font-size: 1.5em; background-color: #333; color: #fff;">구현 예정</div>
                             <div class="revealer"></div>
                             <div class="s3_text">
                                 <p class="s3_tit">PROJECT 07</p>
-                                <h4 class="h4_tit">MOBILE</h4>
+                                <h4 class="h4_tit">구현 예정</h4>
                                 <p class="s3_desc">Web Mobile Site Coding</p>
-                                <span class="mSite">kangsane.dothome.co.kr</span>
-                                <a href="#" class="skew window"><span>VIEW SITE</span></a>
+                                <span class="mSite">www.****.***</span>
+                                <a href="#" class="skew"><span>VIEW SITE</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- //section3 -->
-        
         <section id="section4">
             <div class="s4_bg"></div>
             <div class="container">
@@ -323,27 +295,25 @@
                         </h3>
                         <div class="ani_wrap">
                             <div class="ani ani1">
-                                <a href="#">TEXT</a>
+                                <a href="#">LINK1</a>
                             </div>
                             <div class="ani ani2">
-                                <a href="#">ROKET</a>
+                                <a href="#">LINK2</a>
                             </div>
                             <div class="ani ani3">
-                                <a href="#">CUBE</a>
+                                <a href="#">LINK3</a>
                             </div>
                             <div class="ani ani4">
-                                <a href="#">LINE</a>
+                                <a href="#">LINK4</a>
                             </div>
                             <div class="ani ani5">
-                                <a href="#">LOADING</a>
+                                <a href="#">LINK5</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- //section4 -->
-        
         <div id="modal" class="modal1">
             <div class="modal-bg">
                 <div class="modal-cont">
@@ -424,8 +394,6 @@
                 </div>
             </div>
         </div>
-        <!-- //modal -->
-        
         <section id="section5">
             <div class="container">
                 <div class="row">
@@ -456,19 +424,7 @@
                 </div>
             </div>
         </section>
-        <!-- //section5 -->
-        
-
-    </section>
-    <!-- //contents -->
-    
-    
-    
-    
-
-    
-    
-    <!-- script -->
+        </section>
     <script src="assets/js/jquery.min_1.12.4.js"></script>
     <script src="assets/js/jquery-ui-1.12.1.min.js"></script>
     <script src="assets/js/modernizr-custom.js"></script>
@@ -477,13 +433,14 @@
     <script src="assets/js/TweenMax.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
-        //윈도우 팝업
+        // VIEW SITE 버튼 기능 (class="window"): 새 창 팝업 열기
         $('.window').click(function(e){
             e.preventDefault();
-            //window.open("파일명", "팝업이름", "옵션설정");
-            //옵션 : left, top, width, height, status, toolbar, location, menubar, scrollbars, fullscreen
-            window.open("http://kangsane.dothome.co.kr/kakao/", "popup01", "width=375, height=667, toolbar=0, menubar=0");
+            var link = $(this).attr('href'); // 버튼의 href 값을 가져옴
+            // 새 창 열기: URL은 href 값, 팝업 이름은 "portfolioPopup", 옵션 설정
+            window.open(link, "portfolioPopup", "width=1200, height=800, scrollbars=yes"); 
         });
     </script>
+    
 </body>
 </html>
