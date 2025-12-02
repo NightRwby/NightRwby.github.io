@@ -54,13 +54,13 @@ img, video {width: 100%}
 
 
 /* formfree reset */
-#fs-frm input,
-#fs-frm select,
-#fs-frm button,
-#fs-frm textarea,
-#fs-frm fieldset,
-#fs-frm optgroup,
-#fs-frm label {
+#contact-form input,
+#contact-form select,
+#contact-form button,
+#contact-form textarea,
+#contact-form fieldset,
+#contact-form optgroup,
+#contact-form label {
   font-family: inherit;
   font-size: 100%;
   color: inherit;

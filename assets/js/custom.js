@@ -148,6 +148,7 @@ $(function () {
                 ".sec3 .cont_right .s3_img:eq(0)", ".sec3 .cont_right .revealer:eq(0)", ".sec3 .cont_right .s3_text:eq(0)",
                 ".sec3 .cont_right .s3_img:eq(1)", ".sec3 .cont_right .revealer:eq(1)", ".sec3 .cont_right .s3_text:eq(1)",
                 ".sec3 .cont_right .s3_img:eq(2)", ".sec3 .cont_right .revealer:eq(2)", ".sec3 .cont_right .s3_text:eq(2)",
+                ".sec3 .cont_right .s3_img:eq(4)", ".sec3 .cont_right .revealer:eq(3)", ".sec3 .cont_right .s3_text:eq(3)",
             ];
             
             // sec2 about
@@ -285,15 +286,7 @@ $(function () {
         }
 
         // modal (기존 코드 유지)
-        $(".ani1").click(function () {
-            $("#modal.modal1").removeAttr("class").addClass("one").addClass("modal1");
-        });
-        $(".close").click(function () {
-            $("#modal.modal1").addClass("out");
-        });
-        $(".ani2").click(function () {
-            $("#modal.modal2").removeAttr("class").addClass("one").addClass("modal2");
-        });
+        
         $(".close").click(function () {
             $("#modal.modal2").addClass("out");
         });

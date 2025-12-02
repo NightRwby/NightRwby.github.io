@@ -23,7 +23,7 @@
 .progress-text {display: none; font: 14px; margin-top: 10px; position: absolute; text-align: center; top: 55%; width: 100%; color: #fff;}
 .progress-complete .progress-bar {border-top-color: rgb(0,0,0,1);}
 .loader {display: inline-flex; flex-wrap: wrap; width: 90px; height: 90px; transform-style: preserve-3d; transform: rotateX(45deg) rotate(45deg);}
-.loader_box {position: absolute; top: 0; left: 0; width: 30px; height: 30px; background: #3EE7AC; box-shadow: 112.5px 112.5px 20px #000; animation: move 2s ease-in-out infinite both; transform-style: preserve-3d;}
+.loader_box {position: absolute; top: 0; left: 0; width: 30px; height: 30px; background: #3EE9B9; box-shadow: 112.5px 112.5px 20px #000; animation: move 2s ease-in-out infinite both; transform-style: preserve-3d;}
 .loader_box:nth-child(1) {animation-delay: -1s;}
 .loader_box:nth-child(2) {animation-delay: -2s;}
 .loader_box:nth-child(3) {animation-delay: -3s;}
@@ -36,8 +36,9 @@
 #nav {position: relative;}
 #nav h1 {position: absolute; left: 40px; top: 40px; width: 150px; height: 100px; z-index: 9992;}
 #nav h1 svg {width: 100%;}
-#nav h1 .name {position: absolute; left: 50px; top: 11px; color: #fff; font-size: 18px;}
-#nav h1 .sname {position: absolute; left: 50px; top: 35px; color: #666; font-size: 14px; letter-spacing: 0.1em;}
+#nav h1 .name {position: absolute; left: 55px; top: 11px; color: #fff; font-size: 18px;}
+#nav h1 .sname {position: absolute; left: 55px; top: 35px; color: #666; font-size: 14px; letter-spacing: 0.1em;}
+#nav h1 #LogoIcon {width: 45px; height: 45px; object-fit: contain; margin-top: 12px;}
 
 /* dot */
 #dot {position: fixed; left: 0; top:50%; z-index: 9993; transform: translatey(-50%);}
@@ -61,7 +62,7 @@
 /* 3. 활성화된 Dot(현재 보고 있는 섹션)은 무조건 '포인트 컬러' */
 /* !important를 써서 위의 흰색/검은색 설정을 모두 덮어씁니다 */
 #dot li.on a em {
-    color: #3EE7AC !important; 
+    color: #3EE9B9 !important; 
     position: relative;
 }
 
@@ -86,7 +87,7 @@
     position: absolute; 
     opacity: 0; 
     left: 20px; 
-    color: #3EE7AC; 
+    color: #3EE9B9; 
     width: 100px; 
     font-weight: 600; 
     font-size: 16px; 
@@ -188,13 +189,13 @@ iframe {pointer-events: none;}
 .sec1 {}
 .sec1 .text {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 100%; text-align: center; z-index: 9001;}
 .sec1 .text h2 {position: relative; color: #fff; font-size: 120px; text-transform: uppercase; font-family: 'Fugaz One', cursive; font-weight: bold; letter-spacing: 2.5px; margin-top: -18px;}
-.sec1 .text .style1 {color: #3ee7ac;}
+.sec1 .text .style1 {color: #3EE9B9;}
 .sec1 .text .sec1_desc {display: block; color: #c6c6c6;  font-size: 18px; letter-spacing: 1px;}
 .sec1 .text .skew {cursor: pointer; outline: none; position: relative; background-color: transparent; padding: 0; color: #fff; padding: 20px 52px; display: inline-block; border: none;}
 .sec1 .text .skew span {z-index: 3; letter-spacing: 1px;}
-.sec1 .text .skew span:before {content: '';position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) skewX(-20deg); width: 100%; height: 50px; border: 1px solid #3EE7AC; z-index: 2;}
+.sec1 .text .skew span:before {content: '';position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) skewX(-20deg); width: 100%; height: 50px; border: 1px solid #3EE9B9; z-index: 2;}
 .sec1 .text .skew span:before {display: block; transform: translate(-50%, -50%) skew(-20deg); transform-origin: center center; z-indeX: -1;}
-.sec1 .text .skew:after {transition: all 100ms ease-out; content: ''; position: absolute; left: 0; top: 0; transform: skewX(-20deg) scaleX(0); width: 100%; height: 100%; background-color: #3EE7AC; border: 1px solid transparent; z-index: -1;}
+.sec1 .text .skew:after {transition: all 100ms ease-out; content: ''; position: absolute; left: 0; top: 0; transform: skewX(-20deg) scaleX(0); width: 100%; height: 100%; background-color: #3EE9B9; border: 1px solid transparent; z-index: -1;}
 .sec1 .text .skew:hover span:before {animation: fill .5s ease-out; animation-fill-mode: forwards;}
 .sec1 .text .skew:hover:after {animation: swoosh .7s ease-in;}
 .sec1 .text .skew:active:before {background-color: #030d1b;}
@@ -203,7 +204,7 @@ iframe {pointer-events: none;}
 /* 메인 glitch */
 .glitch {position: relative; filter: blur(1px);}
 .glitch:before, .glitch:after {content: "HI,THERE"; position: absolute; top: 0; left: 0; right: 0; overflow: hidden; color: #fff;}
-.glitch:before {left: 8px; text-shadow: 2px 0 #3ee7ac; animation: glitchEffect 2s infinite linear;}
+.glitch:before {left: 8px; text-shadow: 2px 0 #3EE9B9; animation: glitchEffect 2s infinite linear;}
 .glitch:after {left: 4px; text-shadow: -2px 0 #ff0a60; animation: glitchEffect 2s infinite linear;}
 
 
@@ -231,7 +232,7 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
 /* sec2 */
 .s2_bg {position: absolute; left: 50%; top: 8%; transform: translateX(-50%); width: 1000px; height: 800px; background: url(../img/dot_bg.png) no-repeat center center; background-size: cover; z-index: 9000; opacity: 0.35;}
 .sec2 {padding: 6% 0 15% 0; text-align: center;}
-.sec2 .strapline {color: #3ee7ac; font-size: 24px; font-weight: 700; letter-spacing: 0.5px;}
+.sec2 .strapline {color: #3EE9B9; font-size: 24px; font-weight: 700; letter-spacing: 0.5px;}
 .sec2 h3 {font-size: 80px; font-family: 'Fugaz One', cursive; font-weight: bold; margin-top: -14px;}
 .sec2 .photo {width: 100%; margin-top: 5%; }
 .sec2 .photo img {position: relative; width: 200px; height: 200px; border-radius: 50%;}
@@ -280,41 +281,41 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
 /* sec3 */
 
 .sec3 {padding: 6% 0 15% 0; text-align: center;}
-.sec3 .strapline {color: #3ee7ac; font-size: 24px; font-weight: 700; letter-spacing: 0.5px;}
+.sec3 .strapline {color: #3EE9B9; font-size: 24px; font-weight: 700; letter-spacing: 0.5px;}
 .sec3 h3 {color: #fff; font-size: 80px; font-family: 'Fugaz One', cursive; font-weight: bold; margin-top: -14px; padding-bottom: 160px;}
 .sec3 img {display: block; width: 100%; height: auto;}
 .sec3 .cont_left {position: relative; width: 100%; height: 650px;}
 .sec3 .cont_left .s3_img {position: absolute; left: 0; top: 0; width: 650px; z-index: 1;}
-.sec3 .cont_left .revealer {content: ''; position: absolute; left: 0; top: 0; width: 50%; height: 60%; background: #3EE7AC; transform: scaleX(0); pointer-events: none; z-index: 2;}
+.sec3 .cont_left .revealer {content: ''; position: absolute; left: 0; top: 0; width: 50%; height: 60%; background: #3EE9B9; transform: scaleX(0); pointer-events: none; z-index: 2;}
 .sec3 .cont_left .s3_text {position: absolute; right: 0; width: 50%; padding: 6% -0px; z-index: 1;}
-.sec3 .cont_left .s3_text .s3_tit {color: #3EE7AC; font-size: 24px; font-weight: 700;}
+.sec3 .cont_left .s3_text .s3_tit {color: #3EE9B9; font-size: 24px; font-weight: 700;}
 .sec3 .cont_left .s3_text .h4_tit {color: #fff; font-size: 65px; font-weight: bold; line-height: 1;}
 .sec3 .cont_left .s3_text .s3_desc {margin-top: 20px; font-size: 16px; color: #d6d6d6;}
-.sec3 .cont_left .s3_text .mSite {display: block; color:#3EE7AC; font-size: 16px; font-weight: 700;}
+.sec3 .cont_left .s3_text .mSite {display: block; color:#3EE9B9; font-size: 16px; font-weight: 700;}
 
 .sec3 .cont_right {position: relative; width: 100%; height: 650px;}
 .sec3 .cont_right .s3_img {position: absolute; right: 0; top: 0; width: 650px;}
-.sec3 .cont_right .revealer {content: ''; position: absolute; right: 0; top: 0; width: 50%; height: 60%; background: #3EE7AC; transform: scaleX(0); pointer-events: none; z-index: 2;}
+.sec3 .cont_right .revealer {content: ''; position: absolute; right: 0; top: 0; width: 50%; height: 60%; background: #3EE9B9; transform: scaleX(0); pointer-events: none; z-index: 2;}
 .sec3 .cont_right .s3_text {position: absolute; left: 0; width: 50%; padding: 6% -0px;}
-.sec3 .cont_right .s3_text .s3_tit {color: #3EE7AC; font-size: 24px; font-weight: 700;}
+.sec3 .cont_right .s3_text .s3_tit {color: #3EE9B9; font-size: 24px; font-weight: 700;}
 .sec3 .cont_right .s3_text .h4_tit {color: #fff; font-size: 65px; font-weight: bold; line-height: 1;}
 .sec3 .cont_right .s3_text .s3_desc {margin-top: 20px; font-size: 16px; color: #d6d6d6;}
-.sec3 .cont_right .s3_text .mSite {display: block; color:#3EE7AC; font-size: 16px; font-weight: 700;}
+.sec3 .cont_right .s3_text .mSite {display: block; color:#3EE9B9; font-size: 16px; font-weight: 700;}
 
 .sec3 .cont_left .skew {cursor: pointer; outline: none; position: relative; background-color: transparent; padding: 0; color: #fff; padding: 20px 60px; display: inline-block; border: none; margin-top: 20px;}
 .sec3 .cont_left .skew span {z-index: 3; letter-spacing: 1px;}
-.sec3 .cont_left .skew span:before {content: '';position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) skewX(-20deg); width: 100%; height: 50px; border: 1px solid #3EE7AC; z-index: 2;}
+.sec3 .cont_left .skew span:before {content: '';position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) skewX(-20deg); width: 100%; height: 50px; border: 1px solid #3EE9B9; z-index: 2;}
 .sec3 .cont_left .skew span:before {display: block; transform: translate(-50%, -50%) skew(-20deg); transform-origin: center center; z-indeX: -1;}
-.sec3 .cont_left .skew:after {transition: all 100ms ease-out; content: ''; position: absolute; left: 0; top: 0; transform: skewX(-20deg) scaleX(0); width: 100%; height: 100%; background-color: #3EE7AC; border: 1px solid transparent; z-index: -1;}
+.sec3 .cont_left .skew:after {transition: all 100ms ease-out; content: ''; position: absolute; left: 0; top: 0; transform: skewX(-20deg) scaleX(0); width: 100%; height: 100%; background-color: #3EE9B9; border: 1px solid transparent; z-index: -1;}
 .sec3 .cont_left .skew:hover span:before {animation: fill .5s ease-out; animation-fill-mode: forwards;}
 .sec3 .cont_left .skew:hover:after {animation: swoosh .7s ease-in;}
 .sec3 .cont_left .skew:active:before {background-color: #030d1b;}
 
 .sec3 .cont_right .skew {cursor: pointer; outline: none; position: relative; background-color: transparent; padding: 0; color: #fff; padding: 20px 60px; display: inline-block; border: none; margin-top: 20px;}
 .sec3 .cont_right .skew span {z-index: 3; letter-spacing: 1px;}
-.sec3 .cont_right .skew span:before {content: '';position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) skewX(-20deg); width: 100%; height: 50px; border: 1px solid #3EE7AC; z-index: 2;}
+.sec3 .cont_right .skew span:before {content: '';position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) skewX(-20deg); width: 100%; height: 50px; border: 1px solid #3EE9B9; z-index: 2;}
 .sec3 .cont_right .skew span:before {display: block; transform: translate(-50%, -50%) skew(-20deg); transform-origin: center center; z-indeX: -1;}
-.sec3 .cont_right .skew:after {transition: all 100ms ease-out; content: ''; position: absolute; left: 0; top: 0; transform: skewX(-20deg) scaleX(0); width: 100%; height: 100%; background-color: #3EE7AC; border: 1px solid transparent; z-index: -1;}
+.sec3 .cont_right .skew:after {transition: all 100ms ease-out; content: ''; position: absolute; left: 0; top: 0; transform: skewX(-20deg) scaleX(0); width: 100%; height: 100%; background-color: #3EE9B9; border: 1px solid transparent; z-index: -1;}
 .sec3 .cont_right .skew:hover span:before {animation: fill .5s ease-out; animation-fill-mode: forwards;}
 .sec3 .cont_right .skew:hover:after {animation: swoosh .7s ease-in;}
 .sec3 .cont_lecont_rightft .skew:active:before {background-color: #030d1b;}
@@ -370,7 +371,7 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
 /* sec4 */
 .s4_bg {position: absolute; left: 50%; top: 15%; transform: translateX(-50%); width: 1000px; height: 800px; background: url(../img/dot_bg.png) no-repeat center center; background-size: cover; z-index: 9000; opacity: 0.35;}
 .sec4 {padding: 6% 0 15% 0; text-align: center;}
-.sec4 .strapline {color: #3ee7ac; font-size: 24px; font-weight: 700; letter-spacing: 0.5px;}
+.sec4 .strapline {color: #3EE9B9; font-size: 24px; font-weight: 700; letter-spacing: 0.5px;}
 .sec4 h3 {font-size: 80px; font-family: 'Fugaz One', cursive; font-weight: bold; margin-top: -14px; padding-bottom: 80px;}
 .sec4 .ani_wrap {position: relative; padding: 5% 5%;}
 .sec4 .ani_wrap .ani {display: inline-block; width: 200px; height: 300px; background: url(../img/hexagon.svg) no-repeat center center; padding: 0 20px; margin: 0 50px;}
@@ -391,6 +392,7 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
 .sec4 h3 span:nth-child(7)         {transition: all 0.3s 0.8s cubic-bezier(.215,.61,.355,1);}
 .sec4 h3 span:nth-child(8)         {transition: all 0.3s 0.85s cubic-bezier(.215,.61,.355,1);}
 .sec4 h3 span:nth-child(9)         {transition: all 0.3s 0.9s cubic-bezier(.215,.61,.355,1);}
+.sec4 h3 span:nth-child(10)         {transition: all 0.3s 0.95s cubic-bezier(.215,.61,.355,1);}
 .sec4 .ani_wrap                    {opacity: 0; transform: translateY(100px); transition: all 0.5s 0.8s ease;}
 
 
@@ -405,18 +407,18 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
 
 /* sec5 */
 .sec5 {padding: 6% 0 10% 0; text-align: center;}
-.sec5 .strapline {color: #3ee7ac; font-size: 24px; font-weight: 700; letter-spacing: 0.5px;}
+.sec5 .strapline {color: #3EE9B9; font-size: 24px; font-weight: 700; letter-spacing: 0.5px;}
 .sec5 h3 {color: #fff; font-size: 80px; font-family: 'Fugaz One', cursive; font-weight: bold; margin-top: -14px; padding-bottom: 80px;}
 .sec5 .namecard {width: 40%; margin: 0 auto;}
-.sec5 .namecard .sp1 {display: block; color: #3ee7ac; font-size: 16px; text-align: left; padding-bottom: 50px;}
-.sec5 .namecard .sp2 {display: block; color: #3ee7ac; font-size: 16px; text-align: right;}
+.sec5 .namecard .sp1 {display: block; color: #3EE9B9; font-size: 16px; text-align: left; padding-bottom: 50px;}
+.sec5 .namecard .sp2 {display: block; color: #3EE9B9; font-size: 16px; text-align: right;}
 .sec5 .namecard .card {width: 100%; height: 400px; /*background-color: red;*/}
 
 /*sec5 formfree */
-#fs-frm label {font-size: 14px; color: #fff; margin: 14px 0;}
-#fs-frm input, #fs-frm textarea {border: 1px solid rgba(62,231,172,0.3); box-sizing: border-box; background: #030303; padding: 14px 14px; margin-bottom: 20px; color: #fff;}
-#fs-frm input:focus, #fs-frm textarea:focus {background: #030303; outline-style: solid; outline-width: thin; outline-color: #3ee7ac; outline-offset: -1px;}
-#fs-frm button, #fs-frm [type="button"], #fs-frm [type="submit"], #fs-frm [type="reset"]
+#contact-form label {font-size: 14px; color: #fff; margin: 14px 0;}
+#contact-form input, #contact-form textarea {border: 1px solid rgba(62,231,172,0.3); box-sizing: border-box; background: #030303; padding: 14px 14px; margin-bottom: 20px; color: #fff;}
+#contact-form input:focus, #contact-form textarea:focus {background: #030303; outline-style: solid; outline-width: thin; outline-color: #3EE9B9; outline-offset: -1px;}
+#contact-form #button,  #contact-form [type="submit"], #contact-form [type="reset"]
 {width: auto; margin: 0 auto; cursor: pointer; margin-top: 40px; padding: 20px 50px; border-radius: 40px;}
 
 
@@ -451,7 +453,7 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
 #modal .modal-bg {background: rgba(0,0,0,0.9); display:flex; align-items: center; justify-content: center; height: 100%; }
 #modal .modal-bg .modal-cont {position:relative; max-width: 1100px;}
 #modal .modal-bg .modal-cont h2 {font-size: 30px; margin:0; padding-bottom: 50px; color: #fff; font-family: 'Fugaz One', cursive; text-align: center;}
-#modal .modal-bg .modal-cont h2 .style1 {color: #3ee7ac;}
+#modal .modal-bg .modal-cont h2 .style1 {color: #3EE9B9;}
 #modal .modal-bg .modal-cont p 	{font-size: 18px;}
 #modal .modal-bg .modal-cont .close {position: absolute; top: -20px; right: -20px; margin:20px; padding: 10px; background: #1d1d1b; border-radius: 50%; }
 #modal .modal-bg .modal-cont .close svg {width: 24px; fill: #fff; vertical-align: top;}
@@ -469,7 +471,7 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
 /* Track */
 ::-webkit-scrollbar-track {background: #fff;}
 /* Handle */
-::-webkit-scrollbar-thumb {background: #3ee7ac; }
+::-webkit-scrollbar-thumb {background: #3EE9B9; }
 
 
 /* bg */
